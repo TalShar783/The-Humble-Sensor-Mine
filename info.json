@@ -1,0 +1,9 @@
+{
+    "name": "scratch-mine-test",
+    "version": "1.0.0",
+    "title": "Scratch Mine Test",
+    "author": "TalShar783",
+    "factorio_version": "2.1",
+    "dependencies": ["base >= 2.1"],
+    "description": "A test project for a mine prototype that can fire events after being activated via circuit"
+}
