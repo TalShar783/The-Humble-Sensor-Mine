@@ -1,16 +1,22 @@
 local mine = table.deepcopy(data.raw["land-mine"]["land-mine"])
 local mine_item = {
     type = "item",
-    name = "scratch-test-mine",
+    name = "circuit-sensor-mine",
     icon = "__base__/graphics/icons/land-mine.png",
     icon_size = 64,
-    place_result = "scratch-test-mine",
-    stack_size = 50
+    place_result = "circuit-sensor-mine",
+    stack_size = 50,
+    subgroup = "circuit-network",
+    order = "z-circuit-sensor-mine",
 }
-mine.name = "scratch-test-mine"
+mine.name = "circuit-sensor-mine"
 mine.force_die_on_attack = false
-mine.trigger_interval = 600
-mine.timeout = 600
+mine.timeout = 180
+mine.minable.result = "circuit-sensor-mine"
+mine.trigger_collision_mask =
+{
+    layers = {}
+}
 mine.action =
 {
     type = "direct",
@@ -21,10 +27,10 @@ mine.action =
     {
         {
             type = "script",
-            effect_id = "scratch-mine-fired"
+            effect_id = "circuit-mine-fired"
         }
     }
     }
 }
-data:extend({ mine, mine_item })
 
+data:extend({mine, mine_item})
